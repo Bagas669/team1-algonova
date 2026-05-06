@@ -1,0 +1,43 @@
+header{
+    position: absolute;
+    width: 944px;
+    height: 62px;
+    left: 0px;
+    top: 0px;
+
+    background: #D38BED;
+}
+
+header h1{
+    position: absolute;
+    width: 230px;
+    height: 36px;
+    left: 25px;
+    top: 16px;
+
+    font-family: 'Coiny';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+
+    color: rgba(255, 179, 3, 0.2);
+
+    border: 1px solid #060603;
+}
+
+main{
+
+}
+
+.left{
+
+}
+
+.start-btn{
+    
+}
+
+.right{
+
+}
