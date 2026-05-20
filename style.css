@@ -1,19 +1,12 @@
 header{
-    position: absolute;
-    width: 944px;
-    height: 62px;
-    left: 0px;
-    top: 0px;
+    display: flex;
 
-    background: #D38BED;
+    background-color: #D38BED;
 }
 
 header h1{
-    position: absolute;
-    width: 230px;
-    height: 36px;
-    left: 25px;
-    top: 16px;
+    display: flex;
+    justify-content: flex-start;
 
     font-family: 'Coiny';
     font-style: normal;
@@ -27,17 +20,62 @@ header h1{
 }
 
 main{
-
+    background-color: #4E2B65;
 }
 
 .left{
-
+    display: flex;
+    justify-content: flex-start;
 }
 
-.start-btn{
-    
+.left img {
+    display: flex;
+    justify-content: center;
+}
+
+.left .start-btn{
+    display: flex;
+    justify-content: center;
+
+    background: #D38BED;
+    border-radius: 10px;
+}
+
+.left p {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
 }
 
 .right{
-
+    display: flex;
+    justify-content: flex-end;
 }
+
+.right h2, .right ol {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Modak';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: #FBFF00;
+} 
+
+.block {
+    background-color: red;
+    width: 125px;
+    height: 125px;
+}
+
