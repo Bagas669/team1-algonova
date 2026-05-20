@@ -23,7 +23,7 @@ main{
     background-color: #4E2B65;
 }
 
-.container-main p{
+.container-start p{
     display: flex;
     justify-content: center;
     
@@ -37,7 +37,7 @@ main{
     color: #EBF70F;
 }
 
-.container-main h1{
+.container-start h1{
     display: flex;
     justify-content: center;
     
