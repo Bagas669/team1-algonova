@@ -57,23 +57,12 @@ main{
     justify-content: flex-start;
 }
 
-.left img {
-    display: flex;
-    justify-content: center;
-}
-
 .left .start-btn{
-    display: flex;
-    justify-content: center;
-
     background: #D38BED;
     border-radius: 10px;
 }
 
 .left p {
-    display: flex;
-    justify-content: center;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -90,9 +79,6 @@ main{
 }
 
 .right h2, .right ol {
-    display: flex;
-    justify-content: center;
-
     font-family: 'Modak';
     font-style: normal;
     font-weight: 400;
