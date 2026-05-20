@@ -32,5 +32,36 @@
             <div class = "block"></div>
         </div>
     </main>
+    <script>
+        let block = document.querySelector(".block")
+    
+        function moveBlock() {
+            // ubah warna jadi merah dulu
+            block.style.backgroundColor = "red"
+    
+            // posisi random
+            let x = Math.random() * 500
+            let y = Math.random() * 300
+    
+            block.style.marginLeft = x + "px"
+            block.style.marginTop = y + "px"
+    
+            // setelah 1 detik berubah jadi hijau
+            setTimeout(function() {
+                block.style.backgroundColor = "green"
+            }, 1000)
+        }
+    
+        // saat kotak diklik
+        block.addEventListener("click", function() {
+    
+            // hanya bisa diklik kalau hijau
+            if(block.style.backgroundColor == "green") {
+                moveBlock()
+            }
+        })
+        // mulai pertama kali
+        moveBlock()
+    </script>
 </body>
 </html>
