@@ -1,6 +1,5 @@
 header{
     display: flex;
-
     background-color: #D38BED;
 }
 
@@ -15,8 +14,6 @@ header h1{
     line-height: 35px;
 
     color: #EBF70F;
-
-    border: 1px solid #060603;
 }
 
 main{
@@ -59,6 +56,10 @@ main{
 }
 
 .start-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     width: 250px;
     height: 60px;
 
