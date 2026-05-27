@@ -56,10 +56,18 @@
                 moveBlock()
             }
         })
-        
-        moveBlock()
 
         let button = document.querySelector(".start-btn")
+        let start = document.querySelector(".container-start")
+        let main = document.querySelector(".container-main")
+
+        button.addEventListener('click', function(){
+            main.style.display = 'flex'
+            block.style.display = 'flex'
+            start.style.display = 'none'
+            
+            moveBlock()
+        })
     </script>
 </body>
 </html>
