@@ -54,38 +54,42 @@ main{
 
 .left{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
 
-.left .start-btn{
-    background: #D38BED;
+.start-btn{
+    width: 250px;
+    height: 60px;
+
+    border: none;
+    background-color: #D38BED;
     border-radius: 10px;
+    color: black;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.left p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-
-    color: #000000;
+.start-btn:hover {
+    background-color: #d69cf0;
+    transform: scale(1.03);
 }
 
 .right{
-    display: flex;
-    justify-content: flex-end;
+    max-width: 500px;
 }
 
 .right h2, .right ol {
-    font-family: 'Modak';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.8;
+    text-transform: uppercase;
 
-    color: #FBFF00;
+    margin-bottom: 45px;
 } 
 
 .block {
