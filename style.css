@@ -20,6 +20,18 @@ main{
     background-color: #4E2B65;
 }
 
+.container-start{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+
+    padding: 40px;
+}
+
 .container-start p{
     display: flex;
     justify-content: center;
