@@ -32,7 +32,7 @@ main{
     padding: 40px;
 }
 
-.container-start p{
+.title p{
     display: flex;
     justify-content: center;
     
@@ -46,7 +46,7 @@ main{
     color: #EBF70F;
 }
 
-.container-start h1{
+.title h1{
     display: flex;
     justify-content: center;
     
