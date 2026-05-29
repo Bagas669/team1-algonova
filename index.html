@@ -1,76 +1,128 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "style.css">
+    <title>Reaction Time Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>ALGOGAMES</h1>
     </header>
+
     <main>
-        <div class = "container-start">
-            <div class = "title">
+        <!-- START SCREEN -->
+        <div class="container-start">
+            <div class="title">
                 <p>WELCOME TO</p>
                 <h1>REACTION TIME</h1>
             </div>
-            <div class = "left">
-                <img src = "reactiontime.png" width = "190px" height = "190px">
-                <div class = "start-btn">
+
+            <div class="left">
+                <img src="reactiontime.png" width="190px" height="190px">
+
+                <div class="start-btn">
                     <p>START</p>
                 </div>
             </div>
-            <div class = "right">
+
+            <div class="right">
                 <h2>SEE HOW FAST YOUR REFLEXES ARE</h2>
                 <h2>THERE'S ONLY ONE RULE:</h2>
+
                 <ol>
-                    <li>MOVE THE CURSOR TO THE BOX WHEN IT FLASHES RED</li>
+                    <li>CLICK THE BLOCK WHEN IT IS RED</li>
                 </ol>
             </div>
         </div>
-        <div class = "container-main">
-            <div class = "block"></div>
+
+        <!-- GAME SCREEN -->
+        <div class="container-main">
+
+            <div class="hud">
+                <h2 class="time">Time: 30</h2>
+                <h2 class="score">Score: 0</h2>
+            </div>
+
+            <div class="block"></div>
+        </div>
+
+        <!-- GAME OVER -->
+        <div id="gameOver">
+            <h1>GAME OVER</h1>
+            <p id="finalScore">Score: 0</p>
+            <button onclick="restartGame()">RESTART</button>
         </div>
     </main>
+
     <script>
         let block = document.querySelector(".block")
-        block.style.display = 'none'
-    
+        let timeText = document.querySelector(".time")
+        let scoreText = document.querySelector(".score")
+        let startBtn = document.querySelector(".start-btn")
+        let startScreen = document.querySelector(".container-start")
+        let gameScreen = document.querySelector(".container-main")
+
+        let score = 0
+        let time = 30
+        let timer
+
+        block.style.display = "none"
+        gameScreen.style.display = "none"
+
         function moveBlock() {
+
             block.style.backgroundColor = "red"
-    
-            
+
             let x = Math.random() * 500
             let y = Math.random() * 300
-    
+
             block.style.marginLeft = x + "px"
             block.style.marginTop = y + "px"
-    
-            setTimeout(function() {
+
+            setTimeout(() => {
                 block.style.backgroundColor = "green"
-            }, 1000)
+            }, 800)
         }
-    
-        block.addEventListener("click", function() {
-    
-            if(block.style.backgroundColor == "green") {
+
+        block.addEventListener("click", function () {
+            if (block.style.backgroundColor === "green") {
+                score++
+                scoreText.innerHTML = "Score: " + score
                 moveBlock()
             }
         })
 
-        let button = document.querySelector(".start-btn")
-        let start = document.querySelector(".container-start")
-        let main = document.querySelector(".container-main")
+        startBtn.addEventListener("click", function () {
+            startScreen.style.display = "none"
+            gameScreen.style.display = "block"
+            block.style.display = "block"
 
-        button.addEventListener('click', function(){
-            main.style.display = 'flex'
-            block.style.display = 'flex'
-            start.style.display = 'none'
-            
             moveBlock()
+
+            timer = setInterval(() => {
+                time--
+                timeText.innerHTML = "Time: " + time
+
+                if (time <= 0) {
+                    clearInterval(timer)
+                    endGame()
+                }
+            }, 1000)
         })
+
+        function endGame() {
+            block.style.display = "none"
+
+            document.getElementById("gameOver").style.display = "flex"
+            document.getElementById("finalScore").innerHTML = "Score: " + score
+        }
+
+        function restartGame() {
+            location.reload()
+        }
     </script>
 </body>
 </html>
